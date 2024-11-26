@@ -1,0 +1,396 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --backgroundColorNavigation: #33292a;
+  --colorLetters: #fff;
+  --colorBlackLetters: #000000;
+  --backgroundColorWhereToGo: #644b4f;
+  --backgroundContact: #333333;
+}
+body {
+  font-family: "Roboto", "Times New Roman", Times, serif;
+  color: var(--colorLetters);
+}
+
+/*-------------NAVIGATION-----------------*/
+
+header {
+  background-color: var(--backgroundColorNavigation);
+  margin: 0;
+  padding: 15px 0;
+}
+
+header nav {
+  display: flex; /*This is here, because I want to use "Container" 70% width for all 5 li. */
+  justify-content: center; /*Because my first try was that nav was empty, ul had this code and li had ul code - it was not good, li-Reviews was not in the sam line like H1 in HeroSection*/
+}
+
+header ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  width: 70%;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--colorLetters);
+}
+
+.icon {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+  .icon {
+    display: block;
+  }
+  header nav {
+    justify-content: end;
+    padding-right: 15%;
+  }
+}
+
+/*---------------HERO SECTION---------------*/
+
+.heroSection {
+  display: flex;
+  justify-content: center;
+  background-color: turquoise;
+  background-image: url("./images/scott-goodwill-y8Ngwq34_Ak-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 800px;
+  width: 70%;
+  font-size: 80px;
+  font-weight: 750;
+  padding-bottom: 70px;
+}
+
+/*----------------ABOUT US-----------------*/
+
+.AboutUs {
+  color: var(--colorBlackLetters);
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.AboutUsContent {
+  width: 70%;
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.AboutUsText {
+  width: 25%;
+}
+
+.NatureLovers {
+  width: 40%;
+  object-fit: cover;
+}
+
+.AboutUsH2 {
+  font-size: 35px;
+  padding-bottom: 5px; /* I am not sure about it, I made it to achieve that <p> text is on the bottom of div... Should I use any flex property for text in <p>?*/
+}
+
+@media screen and (max-width: 768px) {
+  .AboutUsContent {
+    flex-direction: column;
+  }
+  .AboutUsText {
+    width: 100%;
+  }
+  .NatureLovers {
+    width: 100%;
+    padding-top: 30px;
+  }
+  .AboutUsH2 {
+    padding-bottom: 15px;
+  }
+}
+
+/*--------------- WHAT WE DO----------------*/
+
+.WhatWeDo {
+  background-color: #33292a;
+  display: flex;
+  justify-content: center;
+}
+.WhatWeDoContent {
+  width: 70%;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.WhatWeDoH2 {
+  padding-bottom: 40px;
+}
+
+.WhatWeDoIcons {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 40px;
+}
+
+.IconWithName {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+}
+
+@media screen and (max-width: 768px) {
+  .WhatWeDoIcons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .IconWithName {
+    width: 25%;
+    padding-top: 20px;
+  }
+}
+
+/*-----OUR TRIPS----------*/
+
+/*
+I am not sure about this section. 
+I wanted to achive, that pictures will be smaller and smaller instead of lining up under each other
+when viewPoint gets smaller to breakpoint 768px
+*/
+.OurTrips {
+  color: var(--colorBlackLetters);
+  display: flex;
+  justify-content: center;
+  padding: 5% 0 15% 0; /*Because of margin 2% in OurTripsImage*/
+}
+
+.OurTripsContainer {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-around;
+}
+
+.OurTripsImage {
+  width: 30%;
+  height: 35%;
+  object-fit: cover;
+  margin: 2% 0; /*To have white space between pistures vertically*/
+  border-radius: 3%;
+}
+
+.MyOwnPicture {
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border-radius: 3%;
+  font-weight: 1000;
+}
+
+@media screen and (max-width: 768px) {
+  .OurTripsImage {
+    width: 100%;
+    height: auto;
+  }
+  .MyOwnPicture {
+    padding: 20px 0px;
+  }
+}
+
+/*----------Where do you want to go----------- */
+
+.WhereToGo {
+  background-color: var(--backgroundColorWhereToGo);
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.WhereToGoContainer {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.WhereToGoColumn {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.WhereToGoButton {
+  width: 20%;
+  padding: 15px 0;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 1000;
+  text-decoration: none;
+  text-align: center;
+}
+
+.WhereToGoButton:hover {
+  background-color: wheat;
+}
+
+.WhereToGoP {
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .WhereToGoContainer {
+    flex-direction: column;
+  }
+  .WhereToGoColumn {
+    width: 100%;
+  }
+  .WhereToGoButton {
+    width: 40%;
+  }
+  .WhereToGoP {
+    padding: 30px 0px;
+  }
+}
+
+/*-------------Reviews -------------------*/
+
+.Reviews {
+  background-color: white;
+  color: black;
+  padding: 30px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.ReviewsContainer {
+  width: 70%;
+}
+.ReviewsIntroduction {
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+.ReviewsIntroductionText {
+  width: 30%;
+}
+
+.ReviewsFromGuys {
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.OneReviewFromGuy {
+  width: 30%;
+  padding: 20px 0 0 0;
+}
+
+.ReviewSign {
+  font-weight: 500;
+}
+
+.ReviewText {
+  padding: 20px 0;
+}
+
+.ReviewImage {
+  /*I am not sure here... it was just like playing with numbers */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media screen and (max-width: 768px) {
+  .ReviewsFromGuys {
+    flex-direction: column;
+  }
+  .OneReviewFromGuy {
+    width: 100%;
+  }
+  .ReviewsIntroductionText {
+    width: 100%;
+  }
+}
+
+/*----------GALLERY------------*/
+
+.GalleryContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ImgContainer {
+  width: 50%;
+  height: 500px;
+  transition: transform 0.25s;
+}
+
+.ImgContainer :hover {
+  transform: scale(1.03);
+}
+
+.Gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .GalleryContainer {
+    flex-direction: column;
+  }
+  .ImgContainer {
+    width: 100%;
+  }
+}
+
+/*-----------CONTACT-----------*/
+
+.Contact {
+  padding: 40px 0;
+  background-color: var(--backgroundContact);
+  text-align: center;
+  font-size: x-small;
+}
+
+.LinkContact {
+  padding: 0 0 20px 0;
+}
+
+.Contact a {
+  color: #e9877b;
+}
+
+.Contact a:hover {
+  color: white;
+}
